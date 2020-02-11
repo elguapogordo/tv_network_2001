@@ -5,6 +5,7 @@ class Network
   def initialize(name)
     @name = name
     @shows = []
+    @actors_by_show = {}
   end
 
   def add_show(title)
@@ -22,10 +23,8 @@ class Network
   end
 
   def actors_by_show
-    @actors_by_show = Hash.new { |hash, key| hash[key] = [] }
-    shows.each do |show|
-      @actors_by_show[show.name] = show.actors
-    end
+    shows.each { |show| @actors_by_show[show.name] = show.actors }
+    @actors_by_show
   end
 
 end

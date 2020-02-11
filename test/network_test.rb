@@ -7,9 +7,9 @@ require './lib/show'
 class NetworkTest < Minitest::Test
 
   def test_it_exists
-    nbc = Network.new("NBC")
+  nbc = Network.new("NBC")
 
-    assert_instance_of Network.new, nbc
+  assert_instance_of Network, nbc
   end
 
 end
